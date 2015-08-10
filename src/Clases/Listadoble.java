@@ -73,10 +73,15 @@ public class Listadoble {
         
        
        Nododoble aux = cabecera;
+      
         if(! esVacia()){
             while (aux != null){
-                System.out.println("["+aux.img+"]"+ "/["+aux.nombre+"]"+"-->" );
+                System.out.print("["+aux.img+"_"+aux.nombre+"]"+"-->" );
                 aux=aux.siguiente;
+                
+        
+              
+                
             }
         
         }else{

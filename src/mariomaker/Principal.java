@@ -18,11 +18,22 @@ public class Principal extends javax.swing.JFrame {
      * Creates new form Principal
      */
     
-    int contador=0;
+    int contador_mario=0;
+    int contador_koopa=0;
+    int contador_goomba=0;
+    int contador_ficha=0;
+    int contador_hongo=0;
+    int contador_suelo=0;
+    int contador_pared=0;
+    int contador_castillo=0;
+    
     Listadoble lista = new Listadoble();
+    
+    String mario,koopa,goomba,ficha,hongo,castillo,suelo,pared;
     
     public Principal() {
         initComponents();
+        lblmsg.setVisible(false);
     }
 
     /**
@@ -57,6 +68,7 @@ public class Principal extends javax.swing.JFrame {
         btnagregar = new javax.swing.JButton();
         lblmsg = new javax.swing.JLabel();
         btnprueba = new javax.swing.JButton();
+        lblmostrar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -68,18 +80,53 @@ public class Principal extends javax.swing.JFrame {
         });
 
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/muro.png"))); // NOI18N
+        jLabel1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel1MouseClicked(evt);
+            }
+        });
 
         jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/koopa.png"))); // NOI18N
+        jLabel2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel2MouseClicked(evt);
+            }
+        });
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/castillo.gif"))); // NOI18N
+        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/castillo.png"))); // NOI18N
+        jLabel3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel3MouseClicked(evt);
+            }
+        });
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/gomba.png"))); // NOI18N
+        jLabel4.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel4MouseClicked(evt);
+            }
+        });
 
         jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/ficha.png"))); // NOI18N
+        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel5MouseClicked(evt);
+            }
+        });
 
         jLabel6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/hongo.png"))); // NOI18N
+        jLabel6.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel6MouseClicked(evt);
+            }
+        });
 
-        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/suelo.jpg"))); // NOI18N
+        jLabel7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/img/suelo.png"))); // NOI18N
+        jLabel7.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jLabel7MouseClicked(evt);
+            }
+        });
 
         jLabel8.setFont(new java.awt.Font("Dotum", 0, 18)); // NOI18N
         jLabel8.setText("Selecciona los objetos y la cantidad a agregar a la lista.");
@@ -115,6 +162,11 @@ public class Principal extends javax.swing.JFrame {
         jLabel18.setText("Nombre");
 
         btnagregar.setText("Agregar");
+        btnagregar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnagregarActionPerformed(evt);
+            }
+        });
 
         lblmsg.setFont(new java.awt.Font("Dotum", 1, 14)); // NOI18N
         lblmsg.setText("Se agrego");
@@ -126,12 +178,14 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        lblmostrar.setText("jLabel19");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGap(39, 39, 39)
+                .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
@@ -149,10 +203,14 @@ public class Principal extends javax.swing.JFrame {
                                         .addGap(12, 12, 12)
                                         .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(btnprueba)
-                                    .addComponent(btnagregar))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addGap(0, 0, Short.MAX_VALUE)
+                                        .addComponent(btnagregar))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(lblmostrar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(btnprueba)))
                                 .addGap(40, 40, 40)))
                         .addGap(36, 36, 36)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -160,7 +218,6 @@ public class Principal extends javax.swing.JFrame {
                             .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(41, 41, 41))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(12, 12, 12)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -247,7 +304,9 @@ public class Principal extends javax.swing.JFrame {
                     .addComponent(btnagregar)
                     .addComponent(lblmsg))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(btnprueba)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnprueba)
+                    .addComponent(lblmostrar))
                 .addContainerGap())
         );
 
@@ -256,19 +315,103 @@ public class Principal extends javax.swing.JFrame {
 
     private void lblmarioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_lblmarioMouseClicked
         
+        lblmsg.setVisible(false);
         
-        contador+=1;
-        insertar("/img/mario2.png",txtpersonaje.getText());
-        lblmsg.setVisible(true);
-        lblmsg.setText("Se agrego");
-         System.out.println("se agrego imagen"+ contador);
+        //insertar("/img/mario2.png",txtpersonaje.getText());
+        mario = "/img/mario2.png";
+        lblmostrar.setText(mario);
+        lblmario.setEnabled(false);
+         lblmostrar.setVisible(false);
+        
+        
         //JOptionPane.showMessageDialog(rootPane, "Se agrego Planta Normal a la lista");
     }//GEN-LAST:event_lblmarioMouseClicked
 
     private void btnpruebaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnpruebaActionPerformed
         // TODO add your handling code here:
-        lista.size();
+        System.out.println(lista.size());
+        lista.print();
     }//GEN-LAST:event_btnpruebaActionPerformed
+
+    private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
+        // TODO add your handling code here:
+       
+        insertar(lblmostrar.getText(), txtpersonaje.getText());
+        lblmsg.setVisible(true);
+        lblmsg.setText("Se agrego");
+        
+    }//GEN-LAST:event_btnagregarActionPerformed
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+        // TODO add your handling code here:
+         lblmsg.setVisible(false);
+        contador_goomba+=1;
+        //insertar("/img/mario2.png",txtpersonaje.getText());
+        goomba = "/img/gomba.png";
+         lblmostrar.setText(goomba);
+           lblmostrar.setVisible(false);
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel2MouseClicked
+        // TODO add your handling code here:
+         lblmsg.setVisible(false);
+        contador_koopa+=1;
+        //insertar("/img/mario2.png",txtpersonaje.getText());
+        koopa = "/img/koopa.png";
+         lblmostrar.setText(koopa);
+           lblmostrar.setVisible(false);
+    }//GEN-LAST:event_jLabel2MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+        // TODO add your handling code here:
+         lblmsg.setVisible(false);
+        jLabel3.setEnabled(false);
+        //insertar("/img/mario2.png",txtpersonaje.getText());
+        castillo = "/img/castillo.png";
+         lblmostrar.setText(castillo);
+           lblmostrar.setVisible(false);
+    }//GEN-LAST:event_jLabel3MouseClicked
+
+    private void jLabel1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel1MouseClicked
+        // TODO add your handling code here:
+         lblmsg.setVisible(false);
+        contador_pared+=1;
+        //insertar("/img/mario2.png",txtpersonaje.getText());
+        pared = "/img/muro.png";
+         lblmostrar.setText(pared);
+           lblmostrar.setVisible(false);
+    }//GEN-LAST:event_jLabel1MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        // TODO add your handling code here:
+         lblmsg.setVisible(false);
+        contador_suelo+=1;
+        //insertar("/img/mario2.png",txtpersonaje.getText());
+        suelo = "/img/suelo.png";
+         lblmostrar.setText(suelo);
+           lblmostrar.setVisible(false);
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+        // TODO add your handling code here:
+         lblmsg.setVisible(false);
+        contador_ficha+=1;
+        //insertar("/img/mario2.png",txtpersonaje.getText());
+        ficha = "/img/ficha.png";
+         lblmostrar.setText(ficha);
+           lblmostrar.setVisible(false);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+        // TODO add your handling code here:
+         lblmsg.setVisible(false);
+        hongo+=1;
+        //insertar("/img/mario2.png",txtpersonaje.getText());
+        hongo = "/img/hongo.png";
+         lblmostrar.setText(hongo);
+           lblmostrar.setVisible(false);
+        
+    }//GEN-LAST:event_jLabel6MouseClicked
 
    public void insertar(String img,String nombre)
    {
@@ -276,6 +419,8 @@ public class Principal extends javax.swing.JFrame {
        lista.insertarFinal(img, nombre);
    
    }
+   
+   
     public static void main(String args[]) {
        
         //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
@@ -330,6 +475,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JLabel lblmario;
+    private javax.swing.JLabel lblmostrar;
     private javax.swing.JLabel lblmsg;
     private javax.swing.JTextField txtpersonaje;
     // End of variables declaration//GEN-END:variables
