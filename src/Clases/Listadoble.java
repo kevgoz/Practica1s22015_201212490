@@ -24,8 +24,9 @@ public class Listadoble {
         return (cabecera == null);
     }
     
-    public void insertarCabecera(String img, String nombre){
-       Nododoble nuevo=new Nododoble(img,nombre);
+    ////////EN USOOOOO ////////////////
+    public void insertarCabecera(String img, String nombre,String tipo){
+       Nododoble nuevo=new Nododoble(img,nombre, tipo);
         if(esVacia()){
             cabecera = nuevo;
         }
@@ -41,11 +42,12 @@ public class Listadoble {
         }
     }
      
-     public void insertarFinal(String img, String nombre){
-        Nododoble nuevo = new Nododoble(img, nombre);
+     ////////EN USOOOOO ////////////////
+     public void insertarFinal(String img, String nombre,String tipo){
+        Nododoble nuevo = new Nododoble(img, nombre,tipo);
         Nododoble aux = cabecera;
         if(esVacia())
-            insertarCabecera(img,nombre);
+            insertarCabecera(img,nombre,tipo);
         
         else{
             while(aux.siguiente != null){
@@ -76,7 +78,7 @@ public class Listadoble {
       
         if(! esVacia()){
             while (aux != null){
-                System.out.print("["+aux.img+"_"+aux.nombre+"]"+"-->" );
+                System.out.print("["+aux.img+"_"+aux.nombre+"_"+aux.getTipo()+"]"+"-->" );
                 aux=aux.siguiente;
                 
         

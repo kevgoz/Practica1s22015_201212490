@@ -16,6 +16,9 @@ public class Nododoble {
     
     String img;
     String nombre;
+    String tipo;
+
+   
     int cantidad;
     public Nododoble(String imagen, String nombre)
     {
@@ -26,6 +29,27 @@ public class Nododoble {
         this.nombre = nombre;
         
     }
+    
+     public Nododoble(String imagen, String nombre,String tipo)
+    {
+    
+        this.siguiente = null;
+        this.anterior = null;
+        this.img = imagen;
+        this.nombre = nombre;
+        this.tipo = tipo;
+        
+    }
+    
+     public Nododoble()
+    {
+    
+        this.siguiente = null;
+        this.anterior = null;
+        
+        
+    }
+     
     
  /*
     public Nododoble getSiguiente() {
@@ -67,6 +91,14 @@ public class Nododoble {
 
     public void setCantidad(int cantidad) {
         this.cantidad = cantidad;
+    }
+    
+     public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+        this.tipo = tipo;
     }
         
     
