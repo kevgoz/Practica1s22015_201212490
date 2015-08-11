@@ -13,6 +13,8 @@ public class Nododoble {
     
     Nododoble siguiente;
     Nododoble anterior;
+
+   
     
     String img;
     String nombre;
@@ -99,6 +101,22 @@ public class Nododoble {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+    
+     public Nododoble getSiguiente() {
+        return siguiente;
+    }
+
+    public void setSiguiente(Nododoble siguiente) {
+        this.siguiente = siguiente;
+    }
+
+    public Nododoble getAnterior() {
+        return anterior;
+    }
+
+    public void setAnterior(Nododoble anterior) {
+        this.anterior = anterior;
     }
         
     

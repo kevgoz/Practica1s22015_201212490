@@ -184,7 +184,7 @@ public class Principal extends javax.swing.JFrame {
 
         lblmostrar.setText("jLabel19");
 
-        jButton1.setText("jButton1");
+        jButton1.setText("Siguiente");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -239,8 +239,8 @@ public class Principal extends javax.swing.JFrame {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(btnprueba)))
                         .addGap(35, 35, 35)
-                        .addComponent(jButton1)
-                        .addGap(91, 91, 91))))
+                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(79, 79, 79))))
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
@@ -460,6 +460,8 @@ public class Principal extends javax.swing.JFrame {
         Principal2 p = new Principal2();
         
         p.setVisible(true);
+        p.recuperarlista(lista);
+        p.mostrarlista(lista);
         p.setLocationRelativeTo(null);
        
     }//GEN-LAST:event_jButton1ActionPerformed

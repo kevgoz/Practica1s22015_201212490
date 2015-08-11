@@ -11,8 +11,8 @@ package Clases;
  */
 public class Listadoble {
     
-    private Nododoble cabecera;
-    private Nododoble aux;
+    public Nododoble cabecera;
+    public Nododoble aux;
     
     public Listadoble()
     {
