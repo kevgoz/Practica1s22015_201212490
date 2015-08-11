@@ -37,7 +37,8 @@ public class Principal2 extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        panel = new javax.swing.JScrollPane();
+        jscroll = new javax.swing.JScrollPane();
+        panel = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -55,6 +56,19 @@ public class Principal2 extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
+
+        javax.swing.GroupLayout panelLayout = new javax.swing.GroupLayout(panel);
+        panel.setLayout(panelLayout);
+        panelLayout.setHorizontalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 559, Short.MAX_VALUE)
+        );
+        panelLayout.setVerticalGroup(
+            panelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 305, Short.MAX_VALUE)
+        );
+
+        jscroll.setViewportView(panel);
 
         jLabel1.setFont(new java.awt.Font("Dotum", 1, 14)); // NOI18N
         jLabel1.setText("Imagen");
@@ -86,7 +100,7 @@ public class Principal2 extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(panel)
+            .addComponent(jscroll)
             .addGroup(layout.createSequentialGroup()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -105,7 +119,7 @@ public class Principal2 extends javax.swing.JFrame {
                         .addComponent(jButton2)
                         .addGap(57, 57, 57)
                         .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 132, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(111, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -121,7 +135,7 @@ public class Principal2 extends javax.swing.JFrame {
                     .addComponent(jLabel2)
                     .addComponent(jLabel3))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(panel, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jscroll, javax.swing.GroupLayout.PREFERRED_SIZE, 308, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -131,9 +145,12 @@ public class Principal2 extends javax.swing.JFrame {
         // TODO add your handling code here:
      
         //Principal.lista.print();
-        mostrarlista(Principal.lista);
-       
         System.out.println(Principal.lista.size());
+       
+        JLabel numero = new JLabel();
+            numero.setBounds(10,150,60,20);
+            numero.setText("hola");
+            panel.add(numero);
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -153,16 +170,20 @@ public class Principal2 extends javax.swing.JFrame {
     
     public void mostrarlista(Listadoble milista)
     {
-            Nododoble aux = milista.cabecera;
-            int contador =0;
-            while(aux != null)
+          //  Nododoble aux = milista.cabecera;
+          //  milista.size();
+            JLabel numero = new JLabel("sdfsdfsdf");
+            numero.setBounds(10,10,10,20);
+            numero.setText("hola");
+           // panel.add(numero);
+            /*while(aux != null)
             {
             
             
            JLabel numero = new JLabel();
-            numero.setBounds(5, 150 * contador, 50, 20);
-            numero.setText(Integer.toString(contador) + ".");
-            panel.add(numero);
+            numero.setBounds(5, 150, 50, 20);
+            numero.setText("hola");
+            jscroll.add(numero);
            
             contador +=1;
             aux  = aux.getSiguiente();
@@ -171,7 +192,7 @@ public class Principal2 extends javax.swing.JFrame {
             
             
             }
-    
+    */
     }
     
     
@@ -217,6 +238,7 @@ public class Principal2 extends javax.swing.JFrame {
     private javax.swing.JMenu jMenu1;
     private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
-    private javax.swing.JScrollPane panel;
+    private javax.swing.JScrollPane jscroll;
+    private javax.swing.JPanel panel;
     // End of variables declaration//GEN-END:variables
 }

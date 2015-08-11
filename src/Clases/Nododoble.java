@@ -14,6 +14,8 @@ public class Nododoble {
     Nododoble siguiente;
     Nododoble anterior;
 
+    Objetos datos;
+
    
     
     String img;
@@ -22,6 +24,14 @@ public class Nododoble {
 
    
     int cantidad;
+    
+    public Nododoble(Objetos d)
+    {
+    
+    this.datos = d;
+     this.siguiente = null;
+        this.anterior = null;
+    }
     public Nododoble(String imagen, String nombre)
     {
     
@@ -50,6 +60,13 @@ public class Nododoble {
         this.anterior = null;
         
         
+    }
+      public Objetos getDatos() {
+        return datos;
+    }
+
+    public void setDatos(Objetos datos) {
+        this.datos = datos;
     }
      
     

@@ -73,6 +73,9 @@ public class Principal extends javax.swing.JFrame {
         lblmostrar = new javax.swing.JLabel();
         jButton1 = new javax.swing.JButton();
         lbltipo = new javax.swing.JLabel();
+        jMenuBar1 = new javax.swing.JMenuBar();
+        jMenu1 = new javax.swing.JMenu();
+        jMenu2 = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -192,6 +195,14 @@ public class Principal extends javax.swing.JFrame {
         });
 
         lbltipo.setText("jLabel19");
+
+        jMenu1.setText("Archivo");
+        jMenuBar1.add(jMenu1);
+
+        jMenu2.setText("Graficar");
+        jMenuBar1.add(jMenu2);
+
+        setJMenuBar(jMenuBar1);
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -351,6 +362,8 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
         System.out.println(lista.size());
         lista.print();
+        lista.generararchivo1();
+        lista.generarimagen1();
     }//GEN-LAST:event_btnpruebaActionPerformed
 
     private void btnagregarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnagregarActionPerformed
@@ -528,6 +541,9 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JMenu jMenu1;
+    private javax.swing.JMenu jMenu2;
+    private javax.swing.JMenuBar jMenuBar1;
     private javax.swing.JLabel lblmario;
     private javax.swing.JLabel lblmostrar;
     private javax.swing.JLabel lblmsg;
